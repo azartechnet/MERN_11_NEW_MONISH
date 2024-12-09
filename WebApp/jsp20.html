@@ -1,0 +1,17 @@
+<body>
+    <div>FirstDivElement</div>
+    <div>SecondDivElement</div>
+    <p>SecondPara</p>
+    <p>FirstPara</p>
+    <script>
+        var divelem=document.getElementsByTagName('p')
+
+        for(var i=0;i<divelem.length;i++)
+    {
+        console.log(divelem[i].textContent)
+
+        document.write(divelem[i].textContent)
+    }
+
+    </script>
+</body>
