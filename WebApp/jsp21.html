@@ -1,0 +1,21 @@
+<style>
+    .example
+    {
+        color: blue;
+    }
+    #unique
+    {
+        font-family: 'Courier New', Courier, monospace;
+    }
+</style>
+<body>
+    <div class="example">FirstDiv</div>
+    <div id="unique">SecondDiv</div>
+    <div id="unique">ThirdDiv</div>
+    <script>
+        var f1=document.querySelector('.example');
+        console.log("FirstElement::",f1)
+        var f2=document.querySelectorAll('#unique');
+        console.log("Your value is::",f2)
+    </script>
+</body>
