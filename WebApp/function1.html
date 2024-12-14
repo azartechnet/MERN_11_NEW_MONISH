@@ -1,0 +1,21 @@
+<script>
+    function Sample()
+    {
+        pid=parseInt(prompt("Enter the pid is::"))
+        if(pid==1001)
+    {
+        alert("Welcome to the system");
+    }
+    else
+    {
+        alert("Access denied");
+    }
+        // document.write("This is function",pid)
+    }
+    function Sample2(empid,empname)//argument passing
+    {
+        document.write("This is function 2",empid,empname)
+    }
+</script>
+<button type="button" onclick="Sample()">Sample1</button>
+<button type="button" onclick="Sample2('1001','azar')">Sample2</button>
