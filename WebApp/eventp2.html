@@ -1,0 +1,21 @@
+<body>
+    <form>
+        Enter the value is::<input type="text" id="fname" onblur="myfun()">
+        <input type="submit" value="Login"/>
+    </form>
+    <p id="demo"></p>
+</body>
+<script>
+    function myfun() {
+        var x=document.getElementById("fname").value;
+        document.getElementById("demo").innerHTML="You enter value is::"+x;
+        if(x=="")
+    {
+        document.getElementById("demo").innerHTML="Please enter the value";
+    }
+    else
+    {
+        document.getElementById("demo").innerHTML="You enter value is::"+x;
+    }
+}
+</script>
