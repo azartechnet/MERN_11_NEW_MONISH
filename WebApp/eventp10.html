@@ -1,0 +1,35 @@
+<style>
+    #box
+    {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        text-align: center;
+        line-height: 200px;
+        border: 2px solid blue;
+    }
+</style>
+<body>
+    <div id="box">Click me!</div>
+    
+     <script>
+        document.getElementById("box").addEventListener("click", function(){
+            document.getElementById("box").style.background = "red";
+            document.getElementById("box").style.color = "white";
+            });
+     </script> 
+     <script>
+        const box = document.getElementById("box");
+        box.onmouseleave=function()
+        {
+             box.style.background="lightblue";
+             box.style.color="black";
+        }
+        box.onmouseenter=function()
+        {
+             box.style.background="lightgreen";
+             box.style.color="black";
+        }
+     </script>
+
+</body>
