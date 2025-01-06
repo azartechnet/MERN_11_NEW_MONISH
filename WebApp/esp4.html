@@ -1,0 +1,18 @@
+<h1 id="d1"></h1>
+<h3 id="d2"></h3>
+<script>
+    //creating a Map
+    const f1=new Map([
+        ["name","John"],
+        ["age",30],
+        ["city","New York"]
+    ])
+    let n1=f1.get("name");
+    let a1=f1.get("age");
+    let c1=f1.get("city");
+    console.log(n1,a1,c1);
+    document.getElementById("d1").innerHTML="There are "+f1.size+" elements in the Map";
+    //getting the size of the Map
+    document.getElementById("d2").innerHTML="The name is "+n1+" and the age is"+a1+" and the city is "+c1;
+
+</script>
