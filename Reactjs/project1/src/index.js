@@ -63,10 +63,50 @@ r3.render(<App/>);*/
 
 //React without JSX
 
-const myelem1=React.createElement('h1',null,'welcome')
+/*const myelem1=React.createElement('h1',null,'welcome')
 const myelem2=React.createElement('h2',null,'welcome to react')
 const myelem3=React.createElement('p',null,'welcome to react')
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(React.createElement("div", null, myelem1, myelem2, myelem3));
+root.render(React.createElement("div", null, myelem1, myelem2, myelem3));*/
 
 //Task unorderlist and orderlist
+
+/*const MyElem1=()=>{
+    return(
+        <div>
+            <h1 style={{color:'red'}}>Welcome</h1>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li> 
+            </ol>
+        </div>
+    )
+}
+const r4 = ReactDOM.createRoot(document.getElementById('root'));
+r4.render(<MyElem1/>);*/
+
+//Conditional Rendering
+
+const x=9;
+let text="";
+if(x>10){
+    text="Greater than 10"
+    }else{
+        text="Less than 10"
+        }
+        const MyElem2=()=>{
+            return(
+                <div>
+                    <h1 style={{color:'red'}}>Welcome</h1>
+                    <p>{text}</p>
+                </div>
+                )
+                }
+                const r4 = ReactDOM.createRoot(document.getElementById('root'));
+                r4.render(<MyElem2/>);
