@@ -93,7 +93,7 @@ r4.render(<MyElem1/>);*/
 
 //Conditional Rendering
 
-const x=9;
+/*const x=9;
 let text="";
 if(x>10){
     text="Greater than 10"
@@ -109,4 +109,53 @@ if(x>10){
                 )
                 }
                 const r4 = ReactDOM.createRoot(document.getElementById('root'));
-                r4.render(<MyElem2/>);
+                r4.render(<MyElem2/>);*/
+
+//importing css
+
+/*import './index.css';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const App=()=>{
+    return(
+        <div>
+            <h1>Welcome</h1>
+            <h1 className="f1">Hello</h1>
+            <p id='f2'>Demo</p>
+            <div class="container">
+  <h2>Button Styles</h2>
+  <button type="button" class="btn">Basic</button>
+  <button type="button" class="btn btn-default">Default</button>
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-success">Success</button>
+  <button type="button" class="btn btn-info">Info</button>
+  <button type="button" class="btn btn-warning">Warning</button>
+  <button type="button" class="btn btn-danger">Danger</button>
+  <button type="button" class="btn btn-link">Link</button>      
+</div>
+
+        </div>
+    )
+}
+const r4 = ReactDOM.createRoot(document.getElementById('root'));
+r4.render(<App/>);*/
+
+//Function Component
+
+function Sample()
+{
+    return(
+        <div>
+            <h1>Sample</h1>
+            <p>Sample</p>
+            <div>
+               <h1>Inside div</h1>
+            </div>
+        </div>
+    
+        
+    )
+}
+const r4 = ReactDOM.createRoot(document.getElementById('root'));
+r4.render(<Sample/>);
