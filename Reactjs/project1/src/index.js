@@ -143,7 +143,7 @@ r4.render(<App/>);*/
 
 //Function Component
 
-function Sample()
+/*function Sample()
 {
     return(
         <div>
@@ -158,4 +158,79 @@ function Sample()
     )
 }
 const r4 = ReactDOM.createRoot(document.getElementById('root'));
-r4.render(<Sample/>);
+r4.render(<Sample/>);*/
+
+//class Component
+
+/*class Sample extends React.Component
+{
+    render()
+    {
+        return(
+            <div>
+                <h1>Sample</h1>
+            </div>
+        )
+    }
+}
+const r4 = ReactDOM.createRoot(document.getElementById('root'));
+r4.render(<Sample/>);*/
+
+//Function Component Argum...
+
+/*function Sample(props)
+{
+    return(
+        <div>
+            <h1>{props.name}</h1>
+            <p>{props.age}</p>
+
+        </div>
+    )
+}
+const r4 = ReactDOM.createRoot(document.getElementById('root'));
+r4.render(<Sample name="Rahul" age="25"/>);*/
+
+//component in component
+
+/*function Component1()
+{
+    return(
+        <div>
+            <h1>Component 1</h1>
+        </div>
+    )
+}
+function Component2()
+{
+    return(
+        <div>
+            <h1>Component 2</h1>
+            <Component1/>
+        </div>
+    )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Component2/>)*/
+
+//constructor using super
+
+class Sample extends React.Component
+{
+    constructor()
+    {
+        super();
+        this.state={name:"mohamed",age:36}
+    }
+    render()
+    {
+        return(
+            <>
+              <h1>UserName:{this.state.name}</h1>
+              <h1>Age:{this.state.age}</h1>
+            </>
+        )
+    }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)
