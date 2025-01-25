@@ -215,7 +215,7 @@ r1.render(<Component2/>)*/
 
 //constructor using super
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
     constructor()
     {
@@ -231,6 +231,99 @@ class Sample extends React.Component
             </>
         )
     }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//constructor using props
+
+/*class Sample extends React.Component
+{
+    constructor(props)
+    {
+        super(props);
+        this.state={name:this.props.name,age:this.props.age}
+    }
+    render()
+    {
+        return(
+            <>
+             <h1>UserName:{this.state.name}</h1>
+             <h1>Age:{this.state.age}</h1>
+
+            </>
+        )
+    }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample name="mohamed" age="36"/>)*/
+
+//React state
+//State in ReactJS refers to an object that stores a component’s 
+//dynamic data and determines how the component behaves.
+
+/*class Sample extends React.Component
+{
+    constructor(props)
+    {
+        super(props);
+        this.state={
+            brand:"Ford",
+            model:"Mustang",
+            year:2020,
+            color:"Red"
+        }
+    }
+    render()
+    {
+        return(
+            <>
+               <h1>Brand:{this.state.brand}</h1>
+               <h1>Model:{this.state.model}</h1>
+               <h1>Year:{this.state.year}</h1>
+               <h1>Color:{this.state.color}</h1>
+            </>
+            )
+    }
+
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//Changing the state object
+
+class Sample extends React.Component
+{
+    constructor(props)
+    {
+        super(props);
+        this.state={
+            brand:"Ford",
+            model:"Mustang",
+            year:2020
+            }
+        this.handleClick=this.handleClick.bind(this);
+    }
+    handleClick()
+    {
+        this.setState({
+            brand:"Toyota",
+            model:"Camry",
+            year:2019
+            })
+    
+            }
+            render()
+            {
+                return(
+                    <div>
+                        <h1>Brand: {this.state.brand}</h1>
+                        <h2>Model: {this.state.model}</h2>
+                        <h3>Year: {this.state.year}</h3>
+                        <button onClick={this.handleClick}>Change</button>
+                    </div>
+                    )
+                    }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(<Sample/>)
