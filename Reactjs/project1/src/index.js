@@ -292,7 +292,7 @@ r1.render(<Sample/>)*/
 
 //Changing the state object
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
     constructor(props)
     {
@@ -326,4 +326,59 @@ class Sample extends React.Component
                     }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample/>)
+r1.render(<Sample/>)*/
+
+//React Events
+
+/*function Football()
+{
+    const shoot=()=>{
+        alert("Goal Shooted")
+    }
+    return(
+        <div>
+            <button onClick={shoot}>Shoot</button>
+        </div>
+    )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)*/
+
+/*function Football()
+{
+    const shoot=(a)=>{
+        alert("Goal Shooted"+a)
+        }
+        return(
+            <div>
+                <button onClick={()=>shoot("By Messi")}>Shoot</button>
+            </div>
+        )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)*/
+
+//Conditional Rendering
+
+function MissedGoal()
+{
+    return<h1>MISSED</h1>
+}
+function MadeGoal(props)
+{
+   return<h1>Goal</h1>
+}
+function Goal(props)
+{
+    const isGoal=props.isGoal;
+    if(isGoal)
+    {
+        return<MadeGoal/>
+    }
+    else
+    {
+        return<MissedGoal/>
+    }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Goal isGoal={Math.random()>0.5}/>)
