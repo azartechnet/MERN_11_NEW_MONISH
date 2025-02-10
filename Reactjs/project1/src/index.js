@@ -551,9 +551,9 @@ r1.render(<Header/>)*/
 
  //React Hooks
 
- import { useState } from "react";
+ import { useState,useEffect } from "react";
 
- function Counter()
+ /*function Counter()
  {
      const [count,setCount]=useState(0);
      const [name,setName]=useState("mohamed");
@@ -567,5 +567,44 @@ r1.render(<Header/>)*/
      )
  }
  const r1=ReactDOM.createRoot(document.getElementById('root'))
- r1.render(<Counter/>)
+ r1.render(<Counter/>)*/
+
+ //React useEffect
+
+ /*function ClickCounter()
+ {
+    const [count, setCount] = useState(0);
+    useEffect(() => {
+        document.title = `Clicked ${count} times`;
+        });
+        return (
+            <div>
+             <p>Count: {count}</p>
+              <button onClick={() => setCount(count + 1)}>Increment</button>
+              <button onClick={() => setCount(count - 1)}>Decrement</button>
+            </div>
+        )
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<ClickCounter/>)*/
+
+ //React useRef
+
+ import {useRef}from 'react'
+
+ function FocusInput()
+ {
+     const inputRef=useRef(null);
+     const handleClick=()=>{
+        inputRef.current.focus();
+     }
+     return(
+        <div>
+            <input type="text" ref={inputRef} />
+            <button onClick={handleClick}>Focus</button>
+        </div>
+     )
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<FocusInput/>);
 
