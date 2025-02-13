@@ -590,7 +590,7 @@ r1.render(<Header/>)*/
 
  //React useRef
 
- import {useRef}from 'react'
+ /*import {useRef}from 'react'
 
  function FocusInput()
  {
@@ -606,5 +606,29 @@ r1.render(<Header/>)*/
      )
  }
  const r1=ReactDOM.createRoot(document.getElementById('root'))
- r1.render(<FocusInput/>);
+ r1.render(<FocusInput/>);*/
+
+ //React using without useContext
+
+ function Component1()
+ {
+    const [user,setUser]=useState("mohamed")
+    return(
+        <div>
+            <p>Username: {user}</p>
+            <button onClick={()=>setUser("mohamed ali")}>Change</button>
+            <Component2 user={user}/>
+        </div>
+    )
+ }
+ function Component2(props)
+ {
+    return(
+        <div>
+            <p>Username: {props.user}</p>
+        </div>
+    )
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<Component1/>);
 
