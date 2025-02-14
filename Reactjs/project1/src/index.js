@@ -610,7 +610,7 @@ r1.render(<Header/>)*/
 
  //React using without useContext
 
- function Component1()
+ /*function Component1()
  {
     const [user,setUser]=useState("mohamed")
     return(
@@ -626,6 +626,37 @@ r1.render(<Header/>)*/
     return(
         <div>
             <p>Username: {props.user}</p>
+        </div>
+    )
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<Component1/>);*/
+
+ //React using with useContext
+
+ import { useContext,createContext } from "react";
+
+ const UserContext=createContext();
+
+ function Component1()
+ {
+    const [user,setUser]=useState("mohamed");
+    return(
+        <UserContext.Provider value={user}>
+            <div>
+                <p>Username: {user}</p>
+                <Component2/>
+            </div>
+        </UserContext.Provider>
+        
+    )
+ }
+ function Component2()
+ {
+    const user = useContext(UserContext);
+    return(
+        <div>
+            <p>Username: {user}</p>
         </div>
     )
  }
