@@ -634,7 +634,7 @@ r1.render(<Header/>)*/
 
  //React using with useContext
 
- import { useContext,createContext } from "react";
+ /*import { useContext,createContext } from "react";
 
  const UserContext=createContext();
 
@@ -661,5 +661,87 @@ r1.render(<Header/>)*/
     )
  }
  const r1=ReactDOM.createRoot(document.getElementById('root'))
- r1.render(<Component1/>);
+ r1.render(<Component1/>);*/
 
+ //Another Example useState
+
+ /*function UserProfile()
+ {
+    const [user,setUser]=useState({name:"mohamed",age:36,email:"mohamed@gmail.com"})
+
+    const updateEmail=()=>{
+        setUser({...user,email:"mohamed123@gmail.com"})
+    }
+    return(
+        <div>
+            <p>Username: {user.name}</p>
+            <p>Age: {user.age}</p>
+            <p>Email: {user.email}</p>
+            <button onClick={updateEmail}>Update Email</button>
+            </div>
+            )
+            }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<UserProfile/>);*/
+
+  //useState with Array
+
+  /*function TodoList()
+  {
+    const [todos,setTodos]=useState(["BuyMilk","BuyEggs","BuyBread"]);
+    const addTodo=()=>{
+        setTodos([...todos,"BuyButter"])
+    }
+    return(
+        <div>
+            <ul>
+                {todos.map((todo,index)=>(
+                    <li>{index}{todo}</li>
+                    ))}
+                    </ul>
+                    <button onClick={addTodo}>Add Todo</button>
+        </div>
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<TodoList/>);*/
+
+  //React REST API post using of useState and useEffects
+
+  function App()
+  {
+    const [user,setUser]=useState([]);
+
+    useEffect(()=>{
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response=>response.json())
+        .then(data=>setUser(data))
+    })
+    return(
+        <div>
+            <h1>Users</h1>
+            <table>
+                <thead>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>WebSite</th>
+                    <th>Action</th>
+               </thead>
+                <tbody>
+                    {user.map((user,index)=>(
+                        <tr key={index}>
+                            <td>{user.id}</td>
+                            <td>{user.name}</td>
+                            <td>{user.email}</td>
+                            <td>{user.website}</td>
+                            <td>Edit Delete</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    )
+  }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<App/>);
