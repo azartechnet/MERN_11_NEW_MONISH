@@ -774,7 +774,7 @@ r1.render(<Header/>)*/
 //Fetch weather data from API and display it on the screen
 
 
-function App() {
+/*function App() {
     const [weather, setWeather] = useState(null);
 
     useEffect(() => {
