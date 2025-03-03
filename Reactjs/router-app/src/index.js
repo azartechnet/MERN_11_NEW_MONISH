@@ -4,6 +4,7 @@ import Layout from './pages/Layout'
 import Home from './pages/Home'
 import NoPage from './pages/NoPage'
 import Contact from './pages/Contact'
+import Register from './pages/Register'
 
 export default function App()
 {
@@ -13,6 +14,7 @@ export default function App()
             <Route path="/" element={<Layout />}>
              <Route index element={<Home />} />
              <Route path="contact" element={<Contact />} />
+             <Route path="register" element={<Register />} />
              <Route path="*" element={<NoPage />} />
             </Route>
            </Routes>
