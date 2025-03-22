@@ -1,0 +1,15 @@
+<p id="demo"></p>
+<script>
+    const text='{"name":"mohamed","birth":"2025-03-04","city":"nkl"}'
+
+    const json = JSON.parse(text,function(key,value){
+        if(key=="birth"){
+            return value.split('-').reverse().join('-');
+            }
+            else
+            {
+                 return value;
+            }
+    });
+    document.getElementById("demo").innerHTML = JSON.stringify(json);
+</script>
