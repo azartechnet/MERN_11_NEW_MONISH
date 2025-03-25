@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+    .item1
+    {
+        grid-area:2/1/2/2;
+    }
+    .item2
+    {
+        grid-area:1/2/2/3;
+    }
+    .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 50px); /* 3 columns of 50px each */
+    grid-template-rows: repeat(2, 50px);  /* 2 rows of 50px each */
+    grid-gap: 10px;
+    background-color: aqua;
+    padding: 10px;
+}
+    .grid-container>div
+    {
+        background-color: blue;
+        text-align: center;
+        padding: 20px;
+        font-size: 30px;
+    }
+   
+        </style>
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="item1">1</div>
+            <div class="item2">2</div>
+            <div class="">3</div>
+            <div class="">4</div>
+            <div class="">5</div>
+            <div>6</div>
+        </div>
+    </body>
+</html>
