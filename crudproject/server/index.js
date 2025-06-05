@@ -12,7 +12,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Connect to MongoDB
 const FoodModel=require("./models/Food")
-mongoose.connect("mongodb://localhost:27017/food")
+//mongoose.connect("mongodb://localhost:27017/food")
+
+mongoose.connect("mongodb+srv://admin:admin@cluster0.kdd3t3i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/food")
 .then(() =>
     {
         console.log("Connected to MongoDB")
@@ -41,6 +43,18 @@ app.post("/insert",async(req,res)=>{
         {
             console.log(err);
         }
+})
+
+//Read the data
+app.get("/read",async(req,res)=>{
+    try{
+        const food=await FoodModel.find();
+        res.send(food)
+    }
+    catch(err)
+    {
+         res.send("Error")
+    }
 })
 app.listen(3001,()=>{
     console.log("Server is running on port 3001")
