@@ -6,6 +6,7 @@ function CrudPage()
     const [foodName,setFoodName]=useState("");
     const [description,setDescription]=useState("");
     const [foodList,setFoodList]=useState([]);
+    const [newFoodName,setNewFoodName]=useState("");
    
 
     useEffect(()=>{
@@ -33,6 +34,16 @@ function CrudPage()
             console.log(response.data);
             setFoodList(response.data);
         })
+    }
+    //update
+    const updateFood=(id)=>{
+        Axios.put('http://localhost:3001/update',{id,newFoodName})
+        .then(()=>fetchData())
+    }
+    //delete
+    const deleteFood=(id)=>
+    {
+        Axios.delete(`http://localhost:3001/delete/${id}`).then(()=>fetchData())
     }
 
     return(
@@ -69,9 +80,9 @@ function CrudPage()
                     <td>{val.description}</td>
 
                     <td>
-                       
-                        <button className="btn btn-primary">Edit</button></td>
-                    <td><button className="btn btn-danger">Delete</button></td>
+                       <input type="text" placeholder='UpdateFoodName' onChange={(e)=>setNewFoodName(e.target.value)}/>
+                        <button className="btn btn-primary" onClick={()=>updateFood(val._id)}>Edit</button></td>
+                    <td><button className="btn btn-danger" onClick={()=>deleteFood(val._id)}>Delete</button></td>
                 </tr>
              ))}
           </tbody>
