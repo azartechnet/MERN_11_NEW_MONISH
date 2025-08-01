@@ -3,10 +3,12 @@ const mongoose=require('mongoose')
 const cors=require('cors')
 const app=express()
 
-app.use(cors({
-    origin:'http://localhost:3000',
-    methods:['GET','POST','PUT','DELETE'],
-}))
+// Allow both localhost and GitHub Pages
+const allowedOrigins = [
+  "https://mongodbserver-dzzq.onrender.com",
+  "https://azartechnet.github.io"
+];
+
 // Middleware to parse body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
