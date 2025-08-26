@@ -30,5 +30,11 @@ app.post("/books", async (req, res) => {
   res.json({ message: "Book added!", book: newBook });
 });
 
+// READ all books
+app.get("/books", async (req, res) => {
+  const books = await Book.find();
+  res.json(books);
+});
+
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
