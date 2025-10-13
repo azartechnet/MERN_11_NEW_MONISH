@@ -16,7 +16,7 @@ const db=mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'root',
-    database:'monishdb'
+    database:'testdb'
 });
 
 db.connect((err)=>{
